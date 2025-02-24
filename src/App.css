@@ -1,42 +1,40 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* src/input.css */
+@import "tailwindcss";
+
+@theme {
+  --color-primary-500: oklch(0.72 0.11 178); /* Mint */
+  --color-secondary-500: oklch(0.65 0.15 240); /* Blue */
+  --color-neutral-500: oklch(0.50 0.00 0); /* Gray */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Default theme */
+:root {
+  --primary: var(--color-primary-500);
+  --secondary: var(--color-secondary-500);
+  --neutral: var(--color-neutral-500);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Spring Theme */
+[data-theme="spring"] {
+  --primary: oklch(0.75 0.12 140); /* Light green */
+  --secondary: oklch(0.80 0.10 60); /* Soft yellow */
+  --neutral: oklch(0.85 0.02 160); /* Pale teal */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Autumn Theme */
+[data-theme="autumn"] {
+  --primary: oklch(0.60 0.15 40); /* Burnt orange */
+  --secondary: oklch(0.55 0.12 20); /* Deep red */
+  --neutral: var(--color-neutral-500); /* Gray */
 }
 
-.card {
-  padding: 2em;
+/* Winter Theme */
+[data-theme="winter"] {
+  --primary: oklch(0.70 0.05 220); /* Icy blue */
+  --secondary: oklch(0.65 0.03 260); /* Soft purple */
+  --neutral: oklch(0.90 0.01 240); /* Light silver */
 }
 
-.read-the-docs {
-  color: #888;
-}
+/* Custom utilities */
+.bg-primary { background-color: var(--primary); }
+.text
